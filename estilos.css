@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Handlee&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:wght@300;400;500;600&family=Poppins:wght@100;200;300;400;500;700;800&family=Rubik:wght@300;400;500&family=Satisfy&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    color: #fff;
+}
+
+:root{
+    --bg-color: #51669a;
+}
+
+/*---------Nav-----------*/
+nav{
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    transition: 0.5s;
+}
+
+nav span{
+    font-size: 20px;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+}
+
+nav ul li:not(:last-child){
+    margin-right: 40px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    font-size: 17px;
+}
+
+nav ion-icon{
+    display: none;
+}
+
+/*---------Section1---------*/
+.section1{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.section1::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    z-index: 2;
+    background: rgb(81,102,154);
+    background: linear-gradient(90deg, rgba(81,102,154,1) 0%, rgba(81,102,154,0) 70%);
+}
+
+.section1::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    z-index: 2;
+    background: rgb(81,102,154);
+    background: linear-gradient(0deg, rgba(81,102,154,1) 0%, rgba(81,102,154,0) 20%);}
+
+.section1 video{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    object-fit: cover;
+}
+
+.section1 .contenido{
+    z-index: 5;
+    max-width: 700px;
+    position: relative;
+    margin-left: 5%;
+}
+
+.section1 .contenido h1{
+    font-size: 30px;
+}
+
+.section1 .contenido h2{
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.section1 .contenido p{
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/*----------Section2-----------*/
+.section2{
+    width: 100%;
+    height: auto;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:  100px 50px;
+}
+
+form{
+    width: 500px;
+    display: flex;
+}
+
+#buscarAnime{
+    width: 90%;
+    color: var(--bg-color);
+    outline: none;
+    border: none;
+    font-weight: 500;
+    padding: 10px;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+
+#buscar{
+    width: 10%;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border: solid #fff 1px;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#buscar ion-icon{
+    font-size: 20px;
+}
+
+.mostratData{
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.mostratData .anime{
+    width: 250px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.mostratData .anime:hover .img-container img{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.mostratData .anime-item{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.mostratData .anime-item .img-container{
+    height: 80%;
+    overflow: hidden;
+}
+
+.mostratData .anime-item .img-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.mostratData .anime-item .anime-titulo{
+    height: 20%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.mostratData .anime-item .anime-titulo p{
+    font-size: 15px;
+    color: var(--bg-color);
+}
+
+.noEncontrado{
+    margin: auto;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.noEncontrado img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/*----------Section3----------*/
+.section3{
+    background-color: var(--bg-color);
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 70px 0;
+}
+
+.section3 h2{
+    margin-left: 40px;
+    margin-bottom: 30px;
+    font-size: 25px;
+}
+
+.carrusel{
+    display: flex;
+    overflow: hidden;
+    width: 90%;
+    height: 350px;
+    margin: auto;
+    gap: 30px;
+}
+
+.carrusel .carrusel-item{
+    width: 250px !important;
+    text-align: center;
+    font-size: 16px;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+} 
+
+.carrusel .carrusel-item .img-container{
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.carrusel-item p{
+    width: 100%;
+    height: 20%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    color: var(--bg-color);
+    padding: 10px;
+    overflow: hidden;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+/*-----------Modal-----------*/
+
+.modal-anime{
+    display: none;
+}
+
+.modal-anime.show{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-container{
+    width: 400px;
+    height: 500px;
+    position: relative;
+    border-radius: 10px;
+    background-color: var(--bg-color);
+    padding: 25px;
+}
+
+.modal-container ion-icon{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.modal-item{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.modal-item::-webkit-scrollbar{
+    background-color: transparent;
+    width: 2px !important;
+}
+
+.modal-item::-webkit-scrollbar-thumb{
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.modal-item h3{
+    font-size: 18px;
+}
+
+.modal-item h4{
+    font-size: 15px;
+}
+
+.modal-item img{
+    width: 200px;
+    margin: 10px 0;
+}
+
+.modal-item ul{
+    margin-left: 20px;
+}
+
+@media (max-width: 780px) {
+    /*Nav*/
+    nav{
+        padding: 20px;
+    }
+
+    nav ion-icon{
+        display: block;
+        font-size: 35px;
+        z-index: 10;
+    }
+
+    ul.show{
+        top: 0;
+        transition: 0.3s;
+    }
+
+    ul{
+        position: fixed;
+        width: 100%;
+        top: -100%;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        padding: 25px 0;
+        background-color: var(--bg-color);
+        z-index: 10;
+        transition: 0.4s;
+    }
+
+    nav ul li:not(:last-child) {
+        margin-right: 0;
+    }
+
+    /*Section1*/
+    .section1 .contenido{
+        width: 90%;
+        margin: 0;
+        margin: auto;
+    }
+
+    /*Section2*/
+    .section2{
+        padding: 50px 10px;
+    }
+    form{
+        width: 90%;
+    }
+    .section2 #buscarAnime{
+        width: 80%;
+    }
+
+    .section2 #buscar{
+        width: 20%;
+    }
+
+    /*Section3*/
+    .mostratData .anime{
+        height: 320px;
+    }
+}
+
+@media (max-width: 450px) {
+    /*Modal*/
+    .modal-container{
+        width: 90%;
+        height: 400px;
+    }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jikan Api</title>
+    <link rel="icon" href="recursos/polluelo.png">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <nav>
+        <span>JIKAN Api</span>
+        <ul class="">
+            <li><a href="#Buscar-section">Buscar</a></li>
+            <li><a href="#topAnime">Top Anime</a></li>
+        </ul>
+        <ion-icon id="menu" name="menu"></ion-icon>
+    </nav>
+    <section class="section1">
+        <video muted autoplay loop src="recursos/video.mp4"></video>
+        <div class="contenido">
+            <h1>Attack On Titan</h1>
+            <h2>Shingeki no Kyojin</h2>
+            <p>La tercera temporada de la serie de televisión de anime Attack on Titan fue producida por Wit Studio de IG Port, dirigida en jefe por Tetsurō Araki y dirigida por Masashi Koizuka, con Yasuko Kobayashi a cargo de la composición de la serie y Kyōji Asano brindando diseños de personajes.</p>
+        </div>
+    </section>
+    <section class="section2" id="Buscar-section">
+        <form action="">
+            <input id="buscarAnime" type="text" placeholder="Buscar nombre del anime">
+            <button id="buscar"><ion-icon name="search"></ion-icon></button>
+        </form>
+        <div class="mostratData"></div>
+    </section>
+    <section class="section3" id="topAnime">
+        <h2>Top Anime</h2>
+        <div class="carrusel"></div>
+    </section>
+    <div class="modal-anime">
+        <div class="modal-container">
+            <ion-icon id="close-modal" name="close-circle"></ion-icon>
+            <div class="modal-item"></div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
