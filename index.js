@@ -22,6 +22,7 @@ async function encontrarAnime(anime){
     const api = await fetch(`https://api.jikan.moe/v4/anime?q=${anime}&sfw`)
     const resp = await api.json()
     mostrarData(resp.data)
+    console.log(resp.data)
 }
 
 async function mostrarData(resp){
@@ -92,6 +93,8 @@ closeModal.addEventListener('click', ()=>{
     modal.classList.remove('show')
 })
 
+
+//Top Animne
 const topAnime = async ()=>{
     const api = await fetch('https://api.jikan.moe/v4/top/anime')
     const data = await api.json()
@@ -100,44 +103,74 @@ const topAnime = async ()=>{
 topAnime()
 
 const mostrarTopAnime=(array)=>{
-    array.forEach(item=>{
-        swiperWrapper.innerHTML += `
-           <div class="carrusel-item" style="width: 250px">
-                <div class="img-container">
-                    <img src="${item.images.jpg.image_url}" alt="">
+    const items = document.querySelectorAll('.slide-anime')
+        items.forEach((contenedor,index)=>{
+            array.forEach((anime, i)=>{
+                if (index == i) {
+                    contenedor.innerHTML = `
+                    <div class="anime-item">
+                        <div class="img-container">
+                            <img src="${anime.images.jpg.image_url}" alt="">
+                        </div>
+                        <p>${anime.title}</p>
+                    </div>
+                    `
+                }
+            })
+        })
+}
+
+//Top Manga
+const topManga= async()=>{
+    const url = await fetch('https://api.jikan.moe/v4/top/manga');
+    const data = await url.json()
+    mostrarTopManga(data.data)
+}
+topManga()
+
+const mostrarTopManga=(array)=>{
+    const items = document.querySelectorAll('.slide-manga')
+    items.forEach((contenedor,index)=>{
+        array.forEach((anime, i)=>{
+            if (index == i) {
+                contenedor.innerHTML = `
+                <div class="anime-item">
+                    <div class="img-container">
+                        <img src="${anime.images.jpg.image_url}" alt="">
+                    </div>
+                    <p>${anime.title}</p>
                 </div>
-                <p>${item.title}</p>
-           </div>
-        `
+                `
+            }
+        })
     })
-    console.log(array)
 }
 
-//Carrusel
-const carusel = document.querySelector('.carrusel')
-let isDragStart = false, prevPageX, prevScrollLeft;
-
-const dragStart=(e)=>{
-    isDragStart = true;
-    prevPageX = e.pageX
-    prevScrollLeft = carusel.scrollLeft
+//Top Personajes
+const topPersonajes= async()=>{
+    const url = await fetch('https://api.jikan.moe/v4/top/characters');
+    const data = await url.json()
+    mostrarTopPersonajes(data.data)
 }
+topPersonajes()
 
-const dragging=(e)=>{
-    if (!isDragStart) return;
-    e.preventDefault();
-    let positionDiff = e.pageX - prevPageX;
-    carusel.scrollLeft = prevScrollLeft - positionDiff;
+const mostrarTopPersonajes=(array)=>{
+    const items = document.querySelectorAll('.slide-personajes')
+    items.forEach((contenedor,index)=>{
+        array.forEach((anime, i)=>{
+            if (index == i) {
+                contenedor.innerHTML = `
+                <div class="anime-item">
+                    <div class="img-container">
+                        <img src="${anime.images.jpg.image_url}" alt="">
+                    </div>
+                    <p>${anime.name}</p>
+                </div>
+                `
+            }
+        })
+    })
 }
-
-const dragStop=()=>{
-    isDragStart = false
-}
-
-carusel.addEventListener('mousedown', dragStart);
-carusel.addEventListener('mousemove', dragging);
-carusel.addEventListener('mouseup', dragStop)
-
 //Nav
 menu.addEventListener('click', ()=>{
     const list = document.querySelector('ul')
@@ -158,3 +191,9 @@ window.addEventListener('scroll', ()=>{
         nav.style = 'background: transparent'
     }
 })
+
+document.addEventListener('DOMContentLoaded', ()=>{
+    const preloader = document.querySelector('.preloader')
+    preloader.style = 'display: none;'
+})
+

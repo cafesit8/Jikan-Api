@@ -11,6 +11,21 @@
 
 :root{
     --bg-color: #51669a;
+    --swiper-theme-color: #fff !important;
+}
+
+/*---------Preloader--------*/
+.preloader{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
 }
 
 /*---------Nav-----------*/
@@ -229,55 +244,94 @@ form{
     width: 100%;
     height: auto;
     position: relative;
-    padding: 70px 0;
+    padding: 70px;
+    position: relative;
 }
 
 .section3 h2{
-    margin-left: 40px;
     margin-bottom: 30px;
-    font-size: 25px;
 }
 
-.carrusel{
-    display: flex;
-    overflow: hidden;
-    width: 90%;
-    height: 350px;
-    margin: auto;
-    gap: 30px;
-}
+.swiper {
+    width: 100%;
+    height: 400px;
+  }
 
-.carrusel .carrusel-item{
-    width: 250px !important;
+  .swiper-wrapper{
+    height: 350px !important;
+  }
+
+  .swiper-slide {
+    width: 230px !important;
+    height: 350px !important;
     text-align: center;
-    font-size: 16px;
-    background-color: var(--bg-color);
-    display: flex;
-    flex-direction: column;
-    border-radius: 20px;
-} 
-
-.carrusel .carrusel-item .img-container{
-    width: 100%;
-    height: 80%;
-    overflow: hidden;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-}
-
-.carrusel-item p{
-    width: 100%;
-    height: 20%;
-    background-color: #fff;
+    font-size: 18px;
+    background: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 15px;
-    color: var(--bg-color);
-    padding: 10px;
+    border-radius: 15px;
     overflow: hidden;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
+  }
+
+.swiper-slide .anime-item{
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide .anime-item .img-container{
+    width: 100%;
+    height: 85%;
+    overflow: hidden;
+}
+
+.swiper-slide .anime-item .img-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-slide .anime-item p{
+    width: 100%;
+    height: 15%;
+    padding: 10px;
+    color: var(--bg-color);
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-pagination{
+    margin-top: 20px !important;
+}
+
+/*----------Section4---------*/
+.section4{
+    background-color: var(--bg-color);
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 70px;
+    position: relative;
+}
+
+.section4 h2{
+    margin-bottom: 30px;
+}
+
+/*----------Section5---------*/
+.section5{
+    background-color: var(--bg-color);
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 70px;
+    position: relative;
+}
+
+.section5 h2{
+    margin-bottom: 30px;
 }
 
 /*-----------Modal-----------*/
@@ -349,6 +403,18 @@ form{
     margin-left: 20px;
 }
 
+/*-------------Footer..............*/
+footer{
+    width: 100%;
+    background-color: var(--bg-color);
+    padding: 20px;
+    text-align: center;
+}
+
+footer span{
+    font-weight: 500;
+}
+
 @media (max-width: 780px) {
     /*Nav*/
     nav{
@@ -408,8 +474,18 @@ form{
     }
 
     /*Section3*/
-    .mostratData .anime{
-        height: 320px;
+    .section3{
+        padding: 20px;
+    }
+
+    /*Section4*/
+    .section4{
+        padding: 20px;
+    }
+
+    /*Section5*/
+    .section5{
+        padding: 20px;
     }
 }
 

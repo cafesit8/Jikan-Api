@@ -7,13 +7,19 @@
     <title>Jikan Api</title>
     <link rel="icon" href="recursos/polluelo.png">
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 </head>
 <body>
+    <div class="preloader">
+        <img src="recursos/loadingPreloader.gif" alt="">
+    </div>
     <nav>
         <span>JIKAN Api</span>
         <ul class="">
             <li><a href="#Buscar-section">Buscar</a></li>
             <li><a href="#topAnime">Top Anime</a></li>
+            <li><a href="#topManga">Top Manga</a></li>
+            <li><a href="#topPersonajes">Top Personajes</a></li>
         </ul>
         <ion-icon id="menu" name="menu"></ion-icon>
     </nav>
@@ -33,8 +39,58 @@
         <div class="mostratData"></div>
     </section>
     <section class="section3" id="topAnime">
-        <h2>Top Anime</h2>
-        <div class="carrusel"></div>
+        <h2>Top Animes</h2>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide slide-anime"></div>
+              <div class="swiper-slide slide-anime"></div>
+              <div class="swiper-slide slide-anime"></div>
+              <div class="swiper-slide slide-anime"></div>
+              <div class="swiper-slide slide-anime"></div>
+              <div class="swiper-slide slide-anime"></div>
+              <div class="swiper-slide slide-anime"></div>
+              <div class="swiper-slide slide-anime"></div>
+              <div class="swiper-slide slide-anime"></div>
+              <div class="swiper-slide slide-anime"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <section class="section4" id="topManga">
+        <h2>Top Manga</h2>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide slide-manga"></div>
+              <div class="swiper-slide slide-manga"></div>
+              <div class="swiper-slide slide-manga"></div>
+              <div class="swiper-slide slide-manga"></div>
+              <div class="swiper-slide slide-manga"></div>
+              <div class="swiper-slide slide-manga"></div>
+              <div class="swiper-slide slide-manga"></div>
+              <div class="swiper-slide slide-manga"></div>
+              <div class="swiper-slide slide-manga"></div>
+              <div class="swiper-slide slide-manga"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <section class="section5" id="topPersonajes">
+        <h2>Top Personajes</h2>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide slide-personajes"></div>
+              <div class="swiper-slide slide-personajes"></div>
+              <div class="swiper-slide slide-personajes"></div>
+              <div class="swiper-slide slide-personajes"></div>
+              <div class="swiper-slide slide-personajes"></div>
+              <div class="swiper-slide slide-personajes"></div>
+              <div class="swiper-slide slide-personajes"></div>
+              <div class="swiper-slide slide-personajes"></div>
+              <div class="swiper-slide slide-personajes"></div>
+              <div class="swiper-slide slide-personajes"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
     </section>
     <div class="modal-anime">
         <div class="modal-container">
@@ -42,8 +98,27 @@
             <div class="modal-item"></div>
         </div>
     </div>
+    <footer>
+        Derechos <span>@Cafesito</span><br>
+        2023
+    </footer>
     <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 'auto',
+          spaceBetween: 20,
+          freeMode: true,
+          grabCursor: true,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            dynamicBullets: true,
+            dynamicMainBullets: 1,
+          },
+        });
+      </script>
 </body>
 </html>
