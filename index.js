@@ -171,6 +171,7 @@ const mostrarTopPersonajes=(array)=>{
         })
     })
 }
+
 //Nav
 menu.addEventListener('click', ()=>{
     const list = document.querySelector('ul')
@@ -192,7 +193,7 @@ window.addEventListener('scroll', ()=>{
     }
 })
 
-document.addEventListener('DOMContentLoaded', ()=>{
+window.addEventListener('load', ()=>{
     const preloader = document.querySelector('.preloader')
     preloader.style = 'display: none;'
 })
